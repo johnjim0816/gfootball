@@ -1,14 +1,17 @@
+import sys,os
+curr_path = os.path.dirname(os.path.abspath(__file__))  # current path
+parent_path = os.path.dirname(curr_path)  # parent path
+sys.path.append(parent_path)  # add to system path
 import argparse
 
-import football_env
+from env.football_env import RllibGFootball
 
-
-def rollout(num_episodes:int):
-    env = football_env.RllibGFootball('3_vs_3_auto_GK')
-
-    for i in range(num_episodes):
+def rollout(n_episodes:int):
+    env = RllibGFootball('3_vs_3_auto_GK')
+    print(env.action_space)
+    print(env.observation_space)
+    for i in range(n_episodes):
         observations = env.reset()
-
         done, ep_reward = False, {a: 0 for a in observations}
         while not done:
             random_actions = {a: env.action_space[a].sample() for a in env.action_space}
@@ -23,6 +26,6 @@ def rollout(num_episodes:int):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Rollout a random policy on the football environment')
-    parser.add_argument('--num_episodes', type=int, default=10, help='Number of episodes to roll out')
+    parser.add_argument('--n_episodes', type=int, default=10, help='Number of episodes to roll out')
     args = parser.parse_args()
-    rollout(args.num_episodes)
+    rollout(args.n_episodes)

@@ -1,4 +1,17 @@
-from . import *
+# from . import *
+import gym
+import gfootball_engine as libgame
+e_PlayerRole_GK = libgame.e_PlayerRole.e_PlayerRole_GK
+e_PlayerRole_CB = libgame.e_PlayerRole.e_PlayerRole_CB
+e_PlayerRole_LB = libgame.e_PlayerRole.e_PlayerRole_LB
+e_PlayerRole_RB = libgame.e_PlayerRole.e_PlayerRole_RB
+e_PlayerRole_DM = libgame.e_PlayerRole.e_PlayerRole_DM
+e_PlayerRole_CM = libgame.e_PlayerRole.e_PlayerRole_CM
+e_PlayerRole_LM = libgame.e_PlayerRole.e_PlayerRole_LM
+e_PlayerRole_RM = libgame.e_PlayerRole.e_PlayerRole_RM
+e_PlayerRole_AM = libgame.e_PlayerRole.e_PlayerRole_AM
+e_PlayerRole_CF = libgame.e_PlayerRole.e_PlayerRole_CF
+Team = libgame.e_Team
 
 def build_scenario(builder):
   builder.config().game_duration = 500
