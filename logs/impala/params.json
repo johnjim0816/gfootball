@@ -1,0 +1,43 @@
+{
+  "batch_mode": "truncate_episodes",
+  "entropy_coeff": 0.025145408359267547,
+  "env": "3_vs_3_auto_GK",
+  "framework": "torch",
+  "gamma": 0.9920074154578802,
+  "horizon": 500,
+  "ignore_worker_failures": false,
+  "log_level": "INFO",
+  "lr": 0.00040087670153952904,
+  "model": {
+    "fcnet_activation": "tanh",
+    "fcnet_hiddens": [
+      256,
+      256
+    ],
+    "lstm_cell_size": 256,
+    "lstm_use_prev_action": "true",
+    "lstm_use_prev_reward": "true",
+    "max_seq_len": 13,
+    "use_lstm": "true",
+    "vf_share_layers": "true"
+  },
+  "multiagent": {
+    "policies": {
+      "agent_0": [
+        null,
+        "Box([-inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf\n -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf\n -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf\n -inf], [inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf\n inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf inf\n inf inf inf inf inf inf inf], (43,), float32)",
+        "Discrete(19)",
+        {}
+      ]
+    },
+    "policy_mapping_fn": "<function main.<locals>.<lambda> at 0x7f2818e119e0>"
+  },
+  "num_envs_per_worker": 1,
+  "num_gpus": 0.25,
+  "num_sgd_iter": 17,
+  "num_workers": 13,
+  "observation_filter": "NoFilter",
+  "rollout_fragment_length": 100,
+  "train_batch_size": 2800,
+  "vf_loss_coeff": 0.948465356940326
+}

@@ -1,5 +1,6 @@
 from __future__ import absolute_import, division, print_function
 import sys,os
+from unittest.mock import DEFAULT
 curr_path = os.path.dirname(os.path.abspath(__file__))  # current path
 parent_path = os.path.dirname(curr_path)  # parent path
 sys.path.append(parent_path)  # add to system path
@@ -34,7 +35,7 @@ from ray.tune.schedulers import ASHAScheduler
 from rldm.utils import football_tools as ft
 from rldm.utils import gif_tools as gt
 from rldm.utils import system_tools as st
-
+DEFAULT_CPT_FILE="C:\Users\jiangji\Desktop\gfootball\scripts\checkpoints1.json"
 EXAMPLE_USAGE = """
 Example usage:
 
@@ -201,7 +202,7 @@ if __name__ == '__main__':
         description = "Script for testing RLDM's P3 baseline agents",
         formatter_class=RawTextHelpFormatter,
         epilog=EXAMPLE_USAGE)
-    parser.add_argument('-c', '--checkpoint', default="/root/workspace/gfootball/scripts/checkpoints.json", type=str, 
+    parser.add_argument('-c', '--checkpoint', default=DEFAULT_CPT_FILE, type=str, 
                         help='[REQUIRED] Checkpoint or json file containing paths to checkpoints from which to roll out.')
     parser.add_argument('-g', '--graph', default=True, action='store_true',
                         help='Create a barplot graph for win perc.')

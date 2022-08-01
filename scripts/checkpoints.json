@@ -1,4 +1,0 @@
-{
-    "Checkpoint 4": ["IMPALA", "/root/workspace/gfootball/logs/run_impala_3_vs_3_auto_GK_search_50000000_asha_tune/IMPALA_3_vs_3_auto_GK_e2e37_00008_8_entropy_coeff=0.041027,gamma=0.99231,lr=0.00021095,multiagent={'policies': {'agent_0': _None, _2022-07-30_19-29-09/checkpoint_006200/checkpoint-6200"]
-    
-}
